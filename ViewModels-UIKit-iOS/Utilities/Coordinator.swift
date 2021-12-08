@@ -26,7 +26,7 @@ final class Coordinator: UINavigationController {
     }
     
     func makeViewController() -> MainViewController {
-        UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ViewController") { coder in
+        UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MainViewController") { coder in
             MainViewController(viewModel: MainViewModel(service: self.container.service), coordinator: self, coder: coder)!
         }
     }
