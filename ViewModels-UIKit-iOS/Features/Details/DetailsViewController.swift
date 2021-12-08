@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  DetailsViewController.swift
 //  ViewModels-UIKit-iOS
 //
 //  Created by Ivan Lé Hjelmeland on 08/12/2021.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class DetailsViewController: UIViewController {
 
-    private let viewModel: MainViewModel
+    private let viewModel: DetailsViewModel
     private weak var coordinator: Coordinator?
     
     // Requires > iOS 13, if instansiating storyboard
-    init?(viewModel: MainViewModel, coordinator: Coordinator, coder: NSCoder) {
+    init?(viewModel: DetailsViewModel, coordinator: Coordinator, coder: NSCoder) {
         self.viewModel = viewModel
         self.coordinator = coordinator
         super.init(coder: coder)
@@ -30,12 +30,4 @@ class MainViewController: UIViewController {
         
     }
 
-    @IBAction func pushToVCPressed(_ sender: Any) {
-        coordinator?.showDetailsViewController()
-    }
-    
-    @IBAction func presentVCModallyPressed(_ sender: Any) {
-        coordinator?.presentDetailsViewController()
-    }
 }
-

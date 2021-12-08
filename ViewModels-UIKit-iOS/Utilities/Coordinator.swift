@@ -25,9 +25,23 @@ final class Coordinator: UINavigationController {
         self.pushViewController(makeViewController(), animated: false)
     }
     
+    func showDetailsViewController() {
+        self.pushViewController(makeDetailsViewController(), animated: true)
+    }
+    
+    func presentDetailsViewController() {
+        self.present(makeDetailsViewController(), animated: true, completion: nil)
+    }
+    
     func makeViewController() -> MainViewController {
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "MainViewController") { coder in
             MainViewController(viewModel: MainViewModel(service: self.container.service), coordinator: self, coder: coder)!
+        }
+    }
+    
+    func makeDetailsViewController() -> DetailsViewController {
+        UIStoryboard(name: "Details", bundle: nil).instantiateViewController(identifier: "DetailsViewController") { coder in
+            DetailsViewController(viewModel: DetailsViewModel(service: self.container.service), coordinator: self, coder: coder)!
         }
     }
     
