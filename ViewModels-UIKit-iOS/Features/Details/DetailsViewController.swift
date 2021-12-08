@@ -30,4 +30,8 @@ class DetailsViewController: UIViewController {
         
     }
 
+    @IBAction func doSomethingPressed(_ sender: Any) {
+        viewModel.doSomethingStupid()
+    }
+    
 }
